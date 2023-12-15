@@ -11,29 +11,19 @@ request.onload = function()
         var userdata = JSON.parse(this.responseText);
         console.log(userdata);
         udata = userdata;
-        data(1);
+        // console.log(udata)
+        
     }
 }
 
-$("button").click(function (){
-     
-var a = $(this).attr("value");
-console.log("value button "+ a);
-data(a);
-});
-
-nn 
-
-function data(a)
-{  
+function foo(a){
     var output = "";
-    for(i=((a-1)*10);i<(a*10);i++)
-    {
+    for(i=((a-1)*10);i<(a*10);i++){
         output +='<tr>'+
-                 '<td>'+ udata[i].id + '</td>'+
-                 '<td>'+ udata[i].name + '</td>'+
-                 '<td>'+ udata[i].email + '</td>'+ '<br>'
-                 '</tr>';
+        '<td>'+ udata[i].id + '</td>'+
+        '<td>'+ udata[i].name + '</td>'+
+        '<td>'+ udata[i].email + '</td>'+ '<br>'
+        '</tr>';
     }
-    document.getElementById('user').innerHTML = output;
-}
+    document.getElementById('user').innerHTML= output;
+  }
